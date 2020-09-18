@@ -10,6 +10,7 @@ Loop through all elements in the array until you find the element with the name 
 Call this method with different names from the setup() of Datamatik
 
 */
+
 Students elever[] = new Students[10]; 
 
 void setup(){
@@ -25,11 +26,25 @@ elever[7] = new Students("Farrell");
 elever[8] = new Students("Capria");
 elever[9] = new Students("Pierre");
 
+println(printStudentsNames(1, elever));
+println(findStudents("Yolanda", elever));
+}
 
+// 5.b
+String printStudentsNames(int id, Students [] studentArray){
+String name = studentArray[id].getName();
+
+return name;
 }
 
 
-
-/*String elevernesNavne(String elev, int num) {
-
-}*/
+//5.c
+int findStudents(String name, Students[] studentArray){
+int index =0;
+for(int i = 0; i<studentArray.length;i++) {
+if(studentArray[i].getName()==name) {
+index = i;
+}
+}
+return index;
+}
